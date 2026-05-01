@@ -451,7 +451,7 @@ AI 도구 활용법부터 개발 심화까지, 가장 많은 사이트를 보유
 | 2026.04.19 | 회원가입 role CHECK 수정 (32개 사이트) |
 | 2026.04.26 | PortOne FK 수정 (24개 사이트) |
 | 2026.04.30 | 템플릿 v5.1 업그레이드 + 전 사이트 CSS 패치 (65개 사이트) |
-| 2026.05.01 | 전체 84개 사이트 운영 중 |
+| 2026.05.01 | 전체 87개 사이트 운영 중 |
 
 ---
 
@@ -461,6 +461,241 @@ AI 도구 활용법부터 개발 심화까지, 가장 많은 사이트를 보유
 - **S등급 (90+)**: 13개 사이트
 - **A등급 (80-89)**: 30개 사이트
 - **최고점**: books (100점)
+
+---
+
+## 알림 인프라 (이메일 & SMS)
+
+전 사이트에서 공용으로 사용하는 알림 시스템입니다.
+
+### Edge Functions (Supabase — 이미 배포 완료)
+
+| Edge Function | 역할 | 상태 |
+|---------------|------|------|
+| `send-email` | Resend API 이메일 발송 (`noreply@dreamitbiz.com`) | ✅ 배포됨 |
+| `send-sms` | icode TCP 문자 발송 (90바이트 초과 시 LMS 자동 전환) | ✅ 배포됨 |
+
+### 사용법 (각 사이트에서)
+
+```ts
+import { sendEmail, sendSMS, sendBoth, buildEmailHtml } from '../utils/notifications';
+
+// 이메일 발송
+await sendEmail({
+  to: 'user@example.com',
+  subject: '알림',
+  html: '<p>내용</p>'
+});
+
+// SMS 발송
+await sendSMS({
+  receiver: '01012345678',
+  message: '알림 문자입니다.'
+});
+
+// 이메일 + SMS 동시 발송
+await sendBoth({
+  email: { to: '...', subject: '...', html: '...' },
+  sms: { receiver: '...', message: '...' }
+});
+```
+
+### 적용 방법
+
+어느 사이트든 `notifications.ts`만 복사하면 바로 사용 가능합니다.
+
+- **템플릿 위치**: `templete-ref/src/utils/notifications.ts`
+- **새 사이트**: templete-ref에서 클론 시 자동 포함
+- **기존 사이트**: `notifications.ts` 파일만 복사 후 import
+
+---
+
+## 템플릿 v5.1 — 업그레이드 내역 (2026-04-30)
+
+새 사이트 생성용 템플릿: `templete-ref/`
+
+### 1. 콘텐츠 영역 위치 수정 (`base.css`)
+
+- `.page-header` 기본 스타일 추가 — fixed navbar 높이를 padding-top에 포함
+- `.page-title`, `.page-description` 스타일 정의
+- 기존 `responsive.css`의 모바일 오버라이드와 호환
+
+```css
+.page-header {
+    background: var(--hero-bg);
+    padding: calc(var(--nav-height) + 60px) 0 60px;
+    text-align: center;
+}
+```
+
+> **주의**: `main { padding-top: var(--nav-height) }` 절대 금지 — `.hero`/`.page-header`와 이중 오프셋 발생
+
+### 2. 다크모드 토글 버튼 가시성 개선 (`dark-mode.css`)
+
+```css
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .color-picker-btn,
+[data-theme="dark"] .nav-search-btn {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+```
+
+- SVG 아이콘 색상: `#D1D5DB` (밝은 회색)
+- hover: `var(--primary-blue-light)` 강조
+- 컬러 피커 툴팁 배경: `#1F2937`
+- `.lang-switcher`, `.cart-icon-link` 다크모드 가시성 추가
+
+### 3. `site.ts` 기본 설정 개선
+
+- 상세 수정 체크리스트 주석 추가 (8개 필수 항목 + 수정 불필요 항목)
+- Books 전용 값 제거 → 제네릭 플레이스홀더
+- menuItems를 최소 구성(홈만)으로 변경 + 드롭다운 예시 주석
+
+### 4. OG 이미지 생성 스크립트
+
+```bash
+npm i -D sharp          # 1회 설치
+npm run og-image        # scripts/generate-og-image.mjs 실행
+```
+
+- sharp 기반 1200x630 브랜드 이미지 생성
+- CONFIG 객체만 수정하면 사이트별 맞춤 이미지 자동 생성
+- 생성된 이미지: `public/og-image.png`
+
+### 5. 기타 정리
+
+- `index.html` — 제네릭 OG/SEO 메타 + `[수정]` 주석 표시
+- `.env.example` — Supabase/PortOne 설정 가이드
+- `translations.ts` — 사이트 전용 키를 제네릭 플레이스홀더로 변경
+
+---
+
+## 5색 컬러 테마 시스템
+
+모든 사이트에 적용되는 컬러 테마 시스템입니다. 기본 컬러는 **다크 블루**입니다.
+
+| 이름 | 기본 | 다크 | 밝은 | 용도 |
+|------|------|------|------|------|
+| **Blue** (기본) | `#0046C8` | `#002E8A` | `#4A8FE7` | 대부분의 사이트 기본값 |
+| **Red** | `#C8102E` | `#8A001A` | `#E74A5A` | 경고, 긴급 테마 |
+| **Green** | `#00855A` | `#005C3E` | `#4AE79A` | 교육, 성장 테마 |
+| **Purple** | `#8B1AC8` | `#5E008A` | `#B04AE7` | 창의, 프리미엄 테마 |
+| **Orange** | `#C87200` | `#8A4E00` | `#E7A04A` | 에너지, 활동 테마 |
+
+사용자가 사이트 내에서 실시간으로 컬러를 전환할 수 있으며, 선택값은 `localStorage`에 저장됩니다.
+
+---
+
+## CSS 레이아웃 규칙
+
+### 컨테이너 정렬
+
+```css
+.container {
+    max-width: var(--container-max);   /* 1280px */
+    margin: 0 auto;
+    padding: 0 40px;                   /* → 1200px 콘텐츠 영역 */
+}
+```
+
+- **sidebar-layout도 동일 제약 적용**: max-width/margin/padding 일치 필수
+- **반응형 패딩**: 1024px → `24px`, 480px → `16px`
+
+### Open Graph 메타 태그
+
+카카오톡·페이스북 등 공유 시 미리보기를 위한 OG 설정:
+
+```html
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="사이트명" />
+<meta property="og:title" content="페이지 제목" />
+<meta property="og:description" content="설명" />
+<meta property="og:url" content="https://xxx.dreamitbiz.com" />
+<meta property="og:image" content="https://xxx.dreamitbiz.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+```
+
+- 카카오 공유 디버거: https://developers.kakao.com/tool/debugger/sharing
+
+---
+
+## 외부 서비스 연동
+
+| 서비스 | 용도 | 비고 |
+|--------|------|------|
+| **Supabase** | DB, Auth, Edge Functions | 단일 프로젝트 공유, 사이트별 테이블 prefix 사용 |
+| **Resend** | 이메일 발송 | `noreply@dreamitbiz.com` 발신 |
+| **icode** | SMS/LMS 발송 | TCP 프로토콜, 등록 발신번호 사용 |
+| **PortOne** | 결제 (KG이니시스) | 24개 사이트 연동 |
+| **Cloudflare** | 도메인 DNS 관리 | `*.dreamitbiz.com` 전체 관리 |
+| **GitHub Pages** | 정적 사이트 배포 | `npx gh-pages -d dist` |
+| **Google OAuth** | 소셜 로그인 | Supabase Auth 연동 |
+| **Kakao OAuth** | 소셜 로그인 | Supabase Auth 연동 |
+
+### 환경변수 설정 (`.env`)
+
+각 사이트의 `.env` 파일에 아래 항목을 설정합니다 (`.env`는 gitignore 처리):
+
+```env
+VITE_SUPABASE_URL=https://xxxxxxxx.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGci...
+VITE_IMP_CODE=imp00000000          # PortOne 가맹점 코드
+VITE_PG_PROVIDER=html5_inicis.XXX  # PG 상점 ID
+VITE_SITE_URL=https://xxx.dreamitbiz.com
+```
+
+---
+
+## 새 사이트 생성 가이드
+
+### 1단계: 템플릿 클론
+
+```bash
+cp -r templete-ref/ 새폴더명/
+cd 새폴더명
+```
+
+### 2단계: 필수 파일 수정 (6개)
+
+| 파일 | 수정 내용 |
+|------|-----------|
+| `src/config/site.ts` | siteId, name, nameKo, dbPrefix, menuItems |
+| `src/styles/site.css` | 사이트 전용 색상/스타일 |
+| `src/pages/Home.tsx` | 홈페이지 콘텐츠 |
+| `src/layouts/PublicLayout.tsx` | 라우트 추가 |
+| `public/CNAME` | `새폴더명.dreamitbiz.com` |
+| `index.html` | OG/SEO 메타 태그 |
+
+### 3단계: 수정 불필요 파일
+
+Login, Register, MyPage, Checkout, Cart, Navbar, Footer 등 — `site.ts` 설정으로 자동 반영
+
+### 4단계: OG 이미지 생성
+
+```bash
+npm i -D sharp
+npm run og-image
+```
+
+### 5단계: Supabase 테이블 생성
+
+```sql
+-- prefix를 사용하여 테이블 생성 (예: newsite_)
+CREATE TABLE newsite_categories (...);
+CREATE TABLE newsite_contents (...);
+```
+
+### 6단계: 빌드 & 배포
+
+```bash
+npm run build    # tsc -b && vite build
+npm run deploy   # npx gh-pages -d dist
+```
+
+### 7단계: Cloudflare DNS 설정
+
+- CNAME 레코드: `새폴더명` → `aebonlee.github.io`
 
 ---
 
