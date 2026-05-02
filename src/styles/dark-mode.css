@@ -1257,3 +1257,155 @@
   border-color: var(--primary-blue);
   color: #fff;
 }
+
+/* ============================================
+   Catalog Portal — Dark Mode Overrides
+   ============================================ */
+
+/* Hero animated dots */
+[data-theme="dark"] .catalog-hero::before,
+[data-theme="dark"] .catalog-hero::after,
+[data-theme="dark"] .hero-dot {
+  background: var(--primary-blue);
+  opacity: 0.06;
+}
+
+/* Stats glass cards */
+[data-theme="dark"] .stat-card {
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Category pill bar */
+[data-theme="dark"] .category-pill-bar {
+  background: rgba(17, 24, 39, 0.95);
+  border-bottom-color: #374151;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .category-pill {
+  border-color: #374151;
+  color: #9CA3AF;
+  background: transparent;
+}
+
+[data-theme="dark"] .category-pill:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue-light);
+  background: rgba(74, 143, 231, 0.08);
+}
+
+[data-theme="dark"] .category-pill.active {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+}
+
+/* Sidebar active state */
+[data-theme="dark"] .sidebar-category-item.active {
+  background: rgba(74, 143, 231, 0.12);
+  color: var(--primary-blue-light);
+}
+
+[data-theme="dark"] .sidebar-category-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .sidebar-category-count {
+  background: #374151;
+  color: #9CA3AF;
+}
+
+[data-theme="dark"] .sidebar-category-item.active .sidebar-category-count {
+  background: var(--primary-blue);
+  color: #fff;
+}
+
+/* Sidebar main link */
+[data-theme="dark"] .sidebar-main-link {
+  background: rgba(74, 143, 231, 0.08);
+  border-color: rgba(74, 143, 231, 0.2);
+  color: var(--primary-blue-light);
+}
+
+[data-theme="dark"] .sidebar-main-link:hover {
+  background: rgba(74, 143, 231, 0.15);
+  border-color: var(--primary-blue);
+}
+
+/* Search box */
+[data-theme="dark"] .catalog-search-box {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .catalog-search-box:focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(74, 143, 231, 0.15);
+}
+
+/* Category heading gradient border */
+[data-theme="dark"] .category-heading {
+  border-image: var(--primary-gradient) 1;
+}
+
+[data-theme="dark"] .category-heading-icon {
+  background: rgba(74, 143, 231, 0.12);
+}
+
+/* Site card */
+[data-theme="dark"] .site-card {
+  background: #1F2937;
+  border-color: #374151;
+  border-top-color: #374151;
+}
+
+[data-theme="dark"] .site-card:hover {
+  border-top-color: var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Tech card */
+[data-theme="dark"] .tech-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .tech-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tech-card-icon {
+  background: rgba(74, 143, 231, 0.12);
+}
+
+/* Info card */
+[data-theme="dark"] .info-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .info-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .info-card-icon {
+  background: rgba(74, 143, 231, 0.12);
+}
+
+/* Timeline card — dark line */
+[data-theme="dark"] .info-card.timeline-card li:not(:last-child)::after {
+  background: #374151;
+}
+
+[data-theme="dark"] .info-card.timeline-card li::before {
+  border-color: #1F2937;
+}

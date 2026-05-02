@@ -169,7 +169,26 @@ export const translations: Record<string, Record<string, unknown>> = {
       contactUs: '문의하기'
     },
     site: {
-      nav: {},
+      nav: {
+        education: '교육',
+        company: '회사 사이트',
+        hub: '그룹 허브',
+        liberal: '교양 / 인문',
+        thesis: '논문연구',
+        business: '경영 / 전공',
+        businessMajor: '경영전공',
+        ahp: 'AHP / 역량평가',
+        career: '취업 / 진로',
+        itAi: 'IT / AI',
+        ai: '인공지능',
+        cs: '컴퓨터과학',
+        coding: '코딩 / 프로그래밍',
+        others: '기타',
+        cert: '자격증',
+        teaching: '교수 / 강사',
+        external: '외부 회사',
+        etc: '기타'
+      },
       home: {
         title: 'DreamIT Sites',
         subtitle: 'DreamIT Biz 87개 교육 플랫폼을 한눈에',
@@ -349,7 +368,26 @@ export const translations: Record<string, Record<string, unknown>> = {
       contactUs: 'Contact Us'
     },
     site: {
-      nav: {},
+      nav: {
+        education: 'Education',
+        company: 'Company',
+        hub: 'Group Hub',
+        liberal: 'Liberal Arts',
+        thesis: 'Thesis / Research',
+        business: 'Business',
+        businessMajor: 'Business Major',
+        ahp: 'AHP / Competency',
+        career: 'Career / Personal',
+        itAi: 'IT / AI',
+        ai: 'AI',
+        cs: 'Computer Science',
+        coding: 'Coding',
+        others: 'Others',
+        cert: 'Certifications',
+        teaching: 'Teaching',
+        external: 'External',
+        etc: 'Others'
+      },
       home: {
         title: 'DreamIT Sites',
         subtitle: 'All 87 DreamIT Biz education platforms at a glance',
