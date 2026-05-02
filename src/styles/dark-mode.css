@@ -1262,50 +1262,27 @@
    Catalog Portal — Dark Mode Overrides
    ============================================ */
 
+/* Hero — darker gradient for dark mode */
+[data-theme="dark"] .catalog-hero {
+  background: linear-gradient(135deg, #0a1628 0%, var(--primary-blue-dark, #2B6CC4) 50%, var(--primary-blue) 100%);
+}
+
 /* Hero animated dots */
 [data-theme="dark"] .catalog-hero::before,
 [data-theme="dark"] .catalog-hero::after,
 [data-theme="dark"] .hero-dot {
-  background: var(--primary-blue);
-  opacity: 0.06;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-/* Stats glass cards */
+/* Stats glass cards — on dark gradient hero */
 [data-theme="dark"] .stat-card {
-  background: rgba(31, 41, 55, 0.7);
-  border-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="dark"] .stat-card:hover {
+  background: rgba(255, 255, 255, 0.14);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Category pill bar */
-[data-theme="dark"] .category-pill-bar {
-  background: rgba(17, 24, 39, 0.95);
-  border-bottom-color: #374151;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-[data-theme="dark"] .category-pill {
-  border-color: #374151;
-  color: #9CA3AF;
-  background: transparent;
-}
-
-[data-theme="dark"] .category-pill:hover {
-  border-color: var(--primary-blue);
-  color: var(--primary-blue-light);
-  background: rgba(74, 143, 231, 0.08);
-}
-
-[data-theme="dark"] .category-pill.active {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-  color: #fff;
 }
 
 /* Sidebar active state */

@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef, type ReactElement } from 'react';
+import { useState, useMemo, type ReactElement } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import site from '../config/site';
@@ -9,16 +9,6 @@ const Home = (): ReactElement => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const pillBarRef = useRef<HTMLDivElement>(null);
-
-  // Sync pill bar scroll to show active pill
-  useEffect(() => {
-    if (!pillBarRef.current) return;
-    const activeEl = pillBarRef.current.querySelector('.category-pill.active') as HTMLElement | null;
-    if (activeEl) {
-      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
-  }, [activeCategory]);
 
   const filteredSites = useMemo(() => {
     let result = sites;
@@ -101,32 +91,6 @@ const Home = (): ReactElement => {
           </div>
         </div>
       </section>
-
-      {/* Category Pill Bar */}
-      <nav className="category-pill-bar">
-        <div className="container">
-          <div className="pill-scroll-wrapper" ref={pillBarRef}>
-            <button
-              className={`category-pill${activeCategory === 'all' ? ' active' : ''}`}
-              onClick={() => handleCategoryClick('all')}
-            >
-              <span className="pill-count">{language === 'ko' ? '전체' : 'All'}</span>
-              <span className="pill-count">({sites.length})</span>
-            </button>
-            {categories.map(cat => (
-              <button
-                key={cat.id}
-                className={`category-pill${activeCategory === cat.id ? ' active' : ''}`}
-                onClick={() => handleCategoryClick(cat.id)}
-              >
-                <span className="pill-icon">{cat.icon}</span>
-                <span>{language === 'ko' ? cat.nameKo : cat.name}</span>
-                <span className="pill-count">({cat.count})</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
 
       {/* Sidebar + Site Cards */}
       <section className="catalog-main">

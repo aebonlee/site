@@ -25,7 +25,7 @@
 
 /* ── Hero ── */
 .catalog-hero {
-  background: var(--hero-bg);
+  background: linear-gradient(135deg, var(--primary-blue-dark, #002E8A) 0%, var(--primary-blue) 50%, var(--primary-blue-light, #4A8FE7) 100%);
   padding: calc(var(--nav-height) + 60px) 0 48px;
   text-align: center;
   position: relative;
@@ -38,8 +38,7 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  background: var(--primary-blue);
-  opacity: 0.08;
+  background: rgba(255, 255, 255, 0.08);
   pointer-events: none;
 }
 
@@ -62,8 +61,7 @@
 .hero-dot {
   position: absolute;
   border-radius: 50%;
-  background: var(--primary-blue);
-  opacity: 0.06;
+  background: rgba(255, 255, 255, 0.06);
   pointer-events: none;
 }
 
@@ -93,22 +91,23 @@
 .catalog-hero-title {
   font-size: 2.8rem;
   font-weight: 900;
-  color: var(--text-primary);
+  color: #fff;
   margin-bottom: 0.75rem;
   letter-spacing: -0.03em;
   line-height: 1.2;
 }
 
 .hero-title-highlight {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-text-fill-color: initial;
+  background: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
 }
 
 .catalog-hero-subtitle {
   font-size: 1.15rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
@@ -128,10 +127,10 @@
   align-items: center;
   gap: 0.35rem;
   padding: 1.25rem 2rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 14px;
   min-width: 140px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -139,7 +138,8 @@
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .stat-card-icon {
@@ -150,84 +150,13 @@
 .stat-number {
   font-size: 1.6rem;
   font-weight: 800;
-  color: var(--primary-blue);
+  color: #fff;
 }
 
 .stat-label {
   font-size: 0.82rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
-}
-
-/* ── Category Pill Bar (Sticky) ── */
-.category-pill-bar {
-  position: sticky;
-  top: var(--nav-height);
-  z-index: 90;
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.75rem 0;
-  transition: box-shadow 0.2s ease;
-}
-
-.category-pill-bar.scrolled {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.pill-scroll-wrapper {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0.25rem 0;
-}
-
-.pill-scroll-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.category-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1rem;
-  border-radius: 999px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  white-space: nowrap;
-  cursor: pointer;
-  border: 1.5px solid var(--border-color);
-  background: var(--bg-primary);
-  color: var(--text-secondary);
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-.category-pill:hover {
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
-  background: rgba(0, 70, 200, 0.04);
-}
-
-.category-pill.active {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-  color: #fff;
-}
-
-.pill-icon {
-  font-size: 0.95rem;
-}
-
-.pill-count {
-  font-size: 0.72rem;
-  font-weight: 700;
-  opacity: 0.75;
-}
-
-.category-pill.active .pill-count {
-  opacity: 0.9;
 }
 
 /* ── Catalog Layout (Sidebar + Content) ── */
@@ -821,11 +750,6 @@
   .sidebar-mobile-toggle {
     display: flex;
   }
-
-  /* Pill bar: enable scrolling */
-  .category-pill-bar .container {
-    padding: 0 16px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -835,5 +759,4 @@
   .stat-card { padding: 0.6rem 0.75rem; min-width: 70px; }
   .stat-number { font-size: 1.1rem; }
   .stat-label { font-size: 0.72rem; }
-  .category-pill { padding: 0.35rem 0.75rem; font-size: 0.78rem; }
 }
