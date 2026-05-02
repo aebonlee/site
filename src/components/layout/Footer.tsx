@@ -1,14 +1,42 @@
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import site from '../../config/site';
+import { categories } from '../../data/sites';
 import type { ReactElement, ChangeEvent } from 'react';
 
+/* 14개 카테고리를 3열로 분배 */
+const COL_SIZE = Math.ceil(categories.length / 3);
+const cols = [
+  categories.slice(0, COL_SIZE),
+  categories.slice(COL_SIZE, COL_SIZE * 2),
+  categories.slice(COL_SIZE * 2),
+];
+
 const Footer = (): ReactElement => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="footer">
       <div className="container">
+        {/* 빠르게 가기 — 3열 카테고리 */}
+        <div className="footer-quick-grid">
+          <h4 className="footer-quick-title">{t('footer.quickLinks')}</h4>
+          <div className="footer-quick-cols">
+            {cols.map((col, ci) => (
+              <ul key={ci} className="footer-quick-col">
+                {col.map(cat => (
+                  <li key={cat.id}>
+                    <a href={`/#cat-${cat.id}`}>
+                      <span className="footer-quick-icon">{cat.icon}</span>
+                      {language === 'ko' ? cat.nameKo : cat.name}
+                      <span className="footer-quick-count">{cat.count}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+
         <div className="footer-content">
           <div className="footer-brand">
             <h3>
@@ -26,16 +54,6 @@ const Footer = (): ReactElement => {
               {site.company.salesNumber && <p>통신판매신고번호: {site.company.salesNumber}</p>}
               {site.company.publisherNumber && <p>출판사 신고번호: {site.company.publisherNumber}</p>}
             </div>
-          </div>
-          <div className="footer-links">
-            <h4>{t('footer.quickLinks')}</h4>
-            <ul>
-              {site.footerLinks.map((link, i) => (
-                <li key={i}>
-                  <Link to={link.path}>{t(link.labelKey)}</Link>
-                </li>
-              ))}
-            </ul>
           </div>
           <div className="footer-contact">
             <h4>{t('footer.contact')}</h4>
