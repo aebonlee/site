@@ -52,7 +52,8 @@ const site: SiteConfig = {
     { name: 'orange', color: '#C87200' },
   ],
 
-  menuItems: [],
+  menuItems: [
+    { path: '/about', labelKey: 'nav.about' },],
 
   footerLinks: [
   ],
