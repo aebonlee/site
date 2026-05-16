@@ -55,7 +55,6 @@ const site: SiteConfig = {
   menuItems: [],
 
   footerLinks: [
-    { path: '/', labelKey: 'nav.home' },
   ],
 
   familySites: [
