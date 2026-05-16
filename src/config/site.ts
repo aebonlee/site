@@ -4,7 +4,7 @@ const site: SiteConfig = {
   id: 'site',
   name: 'DreamIT Sites',
   nameKo: 'DreamIT 전체 사이트 포탈',
-  description: 'DreamIT Biz 87개 교육 플랫폼을 한눈에 — 경영, AI, 코딩, 자격증 등 14개 카테고리',
+  description: 'DreamIT Biz 95개 교육 플랫폼을 한눈에 — 경영, AI, 코딩, 자격증 등 14개 카테고리',
   url: 'https://site.dreamitbiz.com',
   dbPrefix: 'site_',
 

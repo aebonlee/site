@@ -26,11 +26,11 @@ export const categories: Category[] = [
   { id: 'career', name: 'Career / Personal', nameKo: '취업 / 진로 / 개인', icon: '🎯', count: 5 },
   { id: 'cs', name: 'Computer Science', nameKo: '컴퓨터과학', icon: '💻', count: 5 },
   { id: 'cert', name: 'Certifications', nameKo: '자격증', icon: '📜', count: 5 },
-  { id: 'ai', name: 'Artificial Intelligence', nameKo: '인공지능', icon: '🤖', count: 16 },
+  { id: 'ai', name: 'Artificial Intelligence', nameKo: '인공지능', icon: '🤖', count: 20 },
   { id: 'coding', name: 'Coding / Programming', nameKo: '코딩 / 프로그래밍', icon: '⌨️', count: 7 },
-  { id: 'teaching', name: 'Teaching / Instructor', nameKo: '교수 / 강사', icon: '👨‍🏫', count: 3 },
-  { id: 'external', name: 'External Companies', nameKo: '외부 회사', icon: '🏭', count: 6 },
-  { id: 'etc', name: 'Others', nameKo: '기타', icon: '📦', count: 5 },
+  { id: 'teaching', name: 'Teaching / Instructor', nameKo: '교수 / 강사', icon: '👨‍🏫', count: 4 },
+  { id: 'external', name: 'External Companies', nameKo: '외부 회사', icon: '🏭', count: 9 },
+  { id: 'etc', name: 'Others', nameKo: '기타', icon: '📦', count: 6 },
 ];
 
 export const sites: SiteInfo[] = [
@@ -119,6 +119,10 @@ export const sites: SiteInfo[] = [
   { id: 'solar', name: 'Solar AI', nameKo: 'Solar LLM 학습', description: '국산 LLM Solar 기반 AI 서비스 개발 실무 교육', url: 'https://solar.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
   { id: 'ax', name: 'AX & DX', nameKo: 'AX & DX 학습', description: 'AI 전환(AX)과 디지털 전환(DX), 최신 트렌드 종합 학습', url: 'https://ax.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
   { id: 'basic-ai', name: 'Basic AI', nameKo: '인공지능 기초 학습', description: 'AI 기초, 활용, 윤리, 트렌드, AX, 용어사전까지 학습', url: 'https://basic-ai.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
+  { id: 'notebooklm', name: 'NotebookLM', nameKo: 'NotebookLM 학습 센터', description: 'Google NotebookLM 교육 과정 — 기초부터 사업계획서 작성까지', url: 'https://notebooklm.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
+  { id: 'codex-study', name: 'Codex CLI Master', nameKo: '코덱스 CLI 마스터', description: 'OpenAI Codex CLI 완전 정복 — 설치부터 고급 프로젝트까지', url: 'https://codex.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
+  { id: 'startup', name: 'AI Startup Academy', nameKo: '생성형 AI 창업 교육', description: '생성형 AI를 활용한 비즈니스 기획 및 성장 전략 교육', url: 'https://startup.dreamitbiz.com', category: 'ai', features: ['Supabase', 'PortOne', 'Auth'] },
+  { id: 'manus', name: 'Manus AI Master', nameKo: 'Manus AI 학습 플랫폼', description: 'Manus AI — 세계 최초 자율형 AI 에이전트 플랫폼 종합 학습', url: 'https://manus.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
 
   // ── 11. 코딩 / 프로그래밍 (7) ──
   { id: 'html', name: 'HTML', nameKo: 'HTML/CSS 학습', description: '웹 프론트엔드 기초, HTML5, CSS3, 반응형 웹', url: 'https://html.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
@@ -133,6 +137,7 @@ export const sites: SiteInfo[] = [
   { id: 'teaching', name: 'Teaching AI', nameKo: '교수학습 AI 도구', description: '대학교수·강사·교사를 위한 AI 기반 교수학습 도구', url: 'https://teaching.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
   { id: 'instructor', name: 'Instructor', nameKo: '강사 역량 개발', description: '강의 스킬, 커리큘럼 개발, 강사 포트폴리오', url: 'https://instructor.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
   { id: 'university', name: 'University AI', nameKo: '생성형 AI 실무 자동화', description: '전남대학교 직원·조교 대상 AI 실무 자동화 교육', url: 'https://university.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
+  { id: 'seoultech', name: 'SeoulTech AI Lecture', nameKo: '서울과학기술대학교 생성형AI 강의', description: '서울과학기술대학교 전체 교수 대상 생성형 AI 활용 강의', url: 'https://seoultech.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
 
   // ── 13. 외부 회사 (6) ──
   { id: 'koreait', name: 'KoreaIT', nameKo: '코리아IT아카데미', description: '직업능력개발훈련 대시보드 (기관경영, 훈련과정, 인프라)', url: 'https://koreait.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
@@ -141,6 +146,8 @@ export const sites: SiteInfo[] = [
   { id: 'allthat', name: 'AllThat Study', nameKo: 'AllThat Study', description: 'ESG(환경·사회·거버넌스) 종합 학습 플랫폼', url: 'https://allthat.dreamitbiz.com', category: 'external', features: ['Supabase', 'PortOne', 'Auth'] },
   { id: 'knc', name: 'KNC Dashboard', nameKo: '산업안전 성과 대시보드', description: '50개 기업 통합 사회비용 절감액 관리 대시보드', url: 'https://knc.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
   { id: 'komipo', name: 'KOMIPO AI Academy', nameKo: '한국중부발전 AI 아카데미', description: '한국중부발전 전 직원 대상 AI 리터러시 교육', url: 'https://komipo.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
+  { id: 'dasco', name: 'DASCO AI Academy', nameKo: '다스코 생성형AI 교육', description: '다스코(주) 직원을 위한 생성형 AI 업무 활용 교육', url: 'https://dasco.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
+  { id: 'kdn', name: 'KDN Vibe Coding', nameKo: '한전KDN 바이브코딩', description: 'KDN 직원 대상 바이브코딩을 활용한 풀스택 웹 개발 교육 (3일, 21시간)', url: 'https://kdn.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
 
   // ── 14. 기타 (5) ──
   { id: 'hwp', name: 'HWP Web', nameKo: '한글 문서 변환기', description: 'HWP/HWPX 문서를 웹에서 변환·편집·관리하는 도구', url: 'https://hwp.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
@@ -148,4 +155,5 @@ export const sites: SiteInfo[] = [
   { id: 'vibe', name: 'Vibe Coding Master', nameKo: '바이브코딩 마스터', description: 'AI 코딩 커리큘럼 + 실전 프로젝트 9개 + 28일 부트캠프', url: 'https://vibe.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'full-stack', name: 'Full-Stack', nameKo: '풀스택 학습', description: '프론트엔드~백엔드~DevOps 풀스택 개발 학습', url: 'https://full-stack.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'korean', name: 'Korean Pro', nameKo: '한국어 학습', description: '베트남·인도·일본·영어권 학생을 위한 한국어 학습, TOPIK', url: 'https://korean.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
+  { id: 'ppt', name: 'GenPPT', nameKo: 'AI 프레젠테이션 생성기', description: 'AI 기반 프레젠테이션 자동 생성 — OpenAI/Claude 활용 슬라이드 제작', url: 'https://ppt.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
 ];
