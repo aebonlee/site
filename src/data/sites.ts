@@ -17,7 +17,7 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: 'company', name: 'Company', nameKo: '회사 사이트', icon: '🏢', count: 5 },
+  { id: 'company', name: 'Company', nameKo: '회사 사이트', icon: '🏢', count: 6 },
   { id: 'ahp', name: 'AHP / Competency', nameKo: 'AHP / 역량평가', icon: '📊', count: 2 },
   { id: 'hub', name: 'Group Hub', nameKo: '그룹 허브', icon: '🔗', count: 9 },
   { id: 'business', name: 'Business Major', nameKo: '경영전공', icon: '💼', count: 8 },
@@ -25,21 +25,22 @@ export const categories: Category[] = [
   { id: 'thesis', name: 'Thesis / Research', nameKo: '논문연구', icon: '🎓', count: 2 },
   { id: 'career', name: 'Career / Personal', nameKo: '취업 / 진로 / 개인', icon: '🎯', count: 5 },
   { id: 'cs', name: 'Computer Science', nameKo: '컴퓨터과학', icon: '💻', count: 5 },
-  { id: 'cert', name: 'Certifications', nameKo: '자격증', icon: '📜', count: 5 },
+  { id: 'cert', name: 'Certifications', nameKo: '자격증', icon: '📜', count: 6 },
   { id: 'ai', name: 'Artificial Intelligence', nameKo: '인공지능', icon: '🤖', count: 20 },
-  { id: 'coding', name: 'Coding / Programming', nameKo: '코딩 / 프로그래밍', icon: '⌨️', count: 7 },
+  { id: 'coding', name: 'Coding / Programming', nameKo: '코딩 / 프로그래밍', icon: '⌨️', count: 8 },
   { id: 'teaching', name: 'Teaching / Instructor', nameKo: '교수 / 강사', icon: '👨‍🏫', count: 4 },
-  { id: 'external', name: 'External Companies', nameKo: '외부 회사', icon: '🏭', count: 9 },
+  { id: 'external', name: 'External Companies', nameKo: '외부 회사', icon: '🏭', count: 10 },
   { id: 'etc', name: 'Others', nameKo: '기타', icon: '📦', count: 6 },
 ];
 
 export const sites: SiteInfo[] = [
-  // ── 1. 회사 사이트 (5) ──
+  // ── 1. 회사 사이트 (6) ──
   { id: 'www', name: 'DreamIT Biz', nameKo: '드림아이티비즈 메인', description: '공식 홈페이지 — 회사소개, 서비스 안내, 전체 사이트 허브', url: 'https://www.dreamitbiz.com', category: 'company', features: ['Supabase', 'PortOne', 'Auth'] },
   { id: 'books', name: 'DreamIT Books', nameKo: '드림아이티 출판', description: '교재 판매, 디지털 콘텐츠, 교육 자료, E-Publishing', url: 'https://books.dreamitbiz.com', category: 'company', features: ['Supabase', 'PortOne', 'Auth'] },
   { id: 'reserve', name: 'Reserve', nameKo: '강의 예약', description: '강의 일정 관리, 예약, 강사 매칭, 관리자 대시보드', url: 'https://reserve.dreamitbiz.com', category: 'company', features: ['Supabase', 'Auth'] },
   { id: 'docs', name: 'DreamIT Docs', nameKo: '학습 자료 라이브러리', description: '프로그래밍, CS, 수학, 과학, 영어, 경영, 자격증 분류', url: 'https://docs.dreamitbiz.com', category: 'company', features: ['Supabase', 'Auth'] },
   { id: 'rest', name: 'AI Reboot Academy', nameKo: '쉬었음청년 AI교육', description: 'AI·바이브코딩 교육, AI 리부트 경진대회, LMS, 코칭', url: 'https://rest.dreamitbiz.com', category: 'company', features: ['Supabase', 'Auth'] },
+  { id: 'site', name: 'DreamIT Sites', nameKo: 'DreamIT 전체 사이트 포탈', description: '전체 사이트 목록 및 카테고리별 분류 포탈', url: 'https://site.dreamitbiz.com', category: 'company', features: ['Supabase', 'Auth'] },
 
   // ── 2. AHP / 역량평가 (2) ──
   { id: 'ahp-basic', name: 'AHP Basic', nameKo: 'AHP 기초 학습', description: '쌍대비교, 가중치 계산, 일관성 검증, 의사결정 지원', url: 'https://ahp-basic.dreamitbiz.com', category: 'ahp', features: ['Supabase', 'PortOne', 'Auth'] },
@@ -95,14 +96,15 @@ export const sites: SiteInfo[] = [
   { id: 'algorithm', name: 'Algorithm', nameKo: '알고리즘 학습', description: '정렬, 탐색, 그래프, DP, 그리디, 코딩 테스트 대비', url: 'https://algorithm.dreamitbiz.com', category: 'cs', features: ['Supabase', 'Auth'] },
   { id: 'software', name: 'SW Design', nameKo: '소프트웨어 설계 & 구현', description: '설계 원칙, UML, 디자인 패턴, OOP, TDD, 실습', url: 'https://software.dreamitbiz.com', category: 'cs', features: ['Supabase', 'Auth'] },
 
-  // ── 9. 자격증 (5) ──
+  // ── 9. 자격증 (6) ──
   { id: 'jobpath', name: 'JobPath', nameKo: '직업상담사 시험 준비', description: '직업상담사 1급·2급 필기·실기 CBT 학습 플랫폼', url: 'https://jobpath.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
   { id: 'eip', name: 'EIP', nameKo: '정보처리기사', description: '정보처리기사 시험 대비 학습 플랫폼', url: 'https://eip.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
   { id: 'linux-study', name: 'Linux Study', nameKo: '리눅스 마스터 자격증', description: '리눅스 마스터 2급/1급 시험 대비, 명령어 사전, 모의고사', url: 'https://linux-study.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
   { id: 'sqld', name: 'SQLD', nameKo: 'SQLD 자격증', description: 'SQL 개발자 자격증 시험 대비 학습 플랫폼', url: 'https://sqld.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
   { id: 'aws', name: 'AWS', nameKo: 'AWS 자격증', description: 'AWS 클라우드 자격증 시험 대비 학습 플랫폼', url: 'https://aws.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
+  { id: 'aice', name: 'AICE Associate', nameKo: 'AICE Associate 학습', description: 'AICE Associate 자격증 시험 대비 학습 플랫폼', url: 'https://aice.dreamitbiz.com', category: 'cert', features: ['Supabase', 'Auth'] },
 
-  // ── 10. 인공지능 (16) ──
+  // ── 10. 인공지능 (20) ──
   { id: 'ai-prompt', name: 'AI Prompt', nameKo: 'AI 프롬프트 학습', description: '효과적인 프롬프트 작성법, 프롬프트 엔지니어링 가이드', url: 'https://ai-prompt.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
   { id: 'chatgpt', name: 'ChatGPT', nameKo: 'ChatGPT 활용', description: 'ChatGPT 사용법, GPTs, API 활용, 업무 자동화', url: 'https://chatgpt.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
   { id: 'gemini', name: 'Gemini', nameKo: 'Gemini 활용', description: 'Google Gemini 사용법, Workspace 연동, 멀티모달 활용', url: 'https://gemini.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
@@ -124,7 +126,7 @@ export const sites: SiteInfo[] = [
   { id: 'startup', name: 'AI Startup Academy', nameKo: '생성형 AI 창업 교육', description: '생성형 AI를 활용한 비즈니스 기획 및 성장 전략 교육', url: 'https://startup.dreamitbiz.com', category: 'ai', features: ['Supabase', 'PortOne', 'Auth'] },
   { id: 'manus', name: 'Manus AI Master', nameKo: 'Manus AI 학습 플랫폼', description: 'Manus AI — 세계 최초 자율형 AI 에이전트 플랫폼 종합 학습', url: 'https://manus.dreamitbiz.com', category: 'ai', features: ['Supabase', 'Auth'] },
 
-  // ── 11. 코딩 / 프로그래밍 (7) ──
+  // ── 11. 코딩 / 프로그래밍 (8) ──
   { id: 'html', name: 'HTML', nameKo: 'HTML/CSS 학습', description: '웹 프론트엔드 기초, HTML5, CSS3, 반응형 웹', url: 'https://html.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
   { id: 'webstudy', name: 'Web Study', nameKo: '웹 개발 학습', description: '웹 개발 종합 (HTML, CSS, JS, 프레임워크)', url: 'https://webstudy.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
   { id: 'reactstudy', name: 'React Study', nameKo: 'React 학습', description: 'React 기초부터 Hooks, 상태관리, 프로젝트 실습', url: 'https://reactstudy.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
@@ -132,14 +134,15 @@ export const sites: SiteInfo[] = [
   { id: 'java-study', name: 'Java Study', nameKo: 'Java 학습', description: 'Java 기초, OOP, 컬렉션, 스레드, 프로젝트 실습', url: 'https://java-study.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
   { id: 'python-study', name: 'Python Study', nameKo: 'Python 학습', description: 'Python 기초, 데이터 분석, 자동화, 웹 스크래핑', url: 'https://python-study.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
   { id: 'coding', name: 'Coding', nameKo: '코딩 학습', description: 'C, Java, Python 코딩 문제 풀기, 플레이그라운드', url: 'https://coding.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
+  { id: 'web', name: 'Web Development', nameKo: '웹 개발 학습', description: '웹 개발 기초부터 실전까지 종합 학습 플랫폼', url: 'https://web.dreamitbiz.com', category: 'coding', features: ['Supabase', 'Auth'] },
 
-  // ── 12. 교수 / 강사 (3) ──
+  // ── 12. 교수 / 강사 (4) ──
   { id: 'teaching', name: 'Teaching AI', nameKo: '교수학습 AI 도구', description: '대학교수·강사·교사를 위한 AI 기반 교수학습 도구', url: 'https://teaching.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
   { id: 'instructor', name: 'Instructor', nameKo: '강사 역량 개발', description: '강의 스킬, 커리큘럼 개발, 강사 포트폴리오', url: 'https://instructor.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
   { id: 'university', name: 'University AI', nameKo: '생성형 AI 실무 자동화', description: '전남대학교 직원·조교 대상 AI 실무 자동화 교육', url: 'https://university.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
   { id: 'seoultech', name: 'SeoulTech AI Lecture', nameKo: '서울과학기술대학교 생성형AI 강의', description: '서울과학기술대학교 전체 교수 대상 생성형 AI 활용 강의', url: 'https://seoultech.dreamitbiz.com', category: 'teaching', features: ['Supabase', 'Auth'] },
 
-  // ── 13. 외부 회사 (6) ──
+  // ── 13. 외부 회사 (10) ──
   { id: 'koreait', name: 'KoreaIT', nameKo: '코리아IT아카데미', description: '직업능력개발훈련 대시보드 (기관경영, 훈련과정, 인프라)', url: 'https://koreait.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
   { id: 'pbi', name: 'PBI', nameKo: 'PBI 로봇 교육센터', description: '키즈~성인~기업 맞춤 로봇 교육, 과정 안내·강사·FAQ', url: 'https://pbi.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
   { id: 'pbirobot', name: 'PBI Robot', nameKo: 'PBI Robot 제품', description: 'AI 기반 로봇 수영장 청소기 AquaSense 시리즈', url: 'https://pbirobot.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
@@ -148,11 +151,13 @@ export const sites: SiteInfo[] = [
   { id: 'komipo', name: 'KOMIPO AI Academy', nameKo: '한국중부발전 AI 아카데미', description: '한국중부발전 전 직원 대상 AI 리터러시 교육', url: 'https://komipo.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
   { id: 'dasco', name: 'DASCO AI Academy', nameKo: '다스코 생성형AI 교육', description: '다스코(주) 직원을 위한 생성형 AI 업무 활용 교육', url: 'https://dasco.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
   { id: 'kdn', name: 'KDN Vibe Coding', nameKo: '한전KDN 바이브코딩', description: 'KDN 직원 대상 바이브코딩을 활용한 풀스택 웹 개발 교육 (3일, 21시간)', url: 'https://kdn.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
+  { id: 'cnu', name: 'CNU AI Education', nameKo: '전남대학교 생성형 AI 교육', description: '전남대학교 대상 생성형 AI 활용 교육 학습 플랫폼', url: 'https://cnu.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
+  { id: 'joongang', name: 'JoongAng Washington', nameKo: '중앙일보 워싱턴', description: '중앙일보 워싱턴 교육 프로그램 학습 플랫폼', url: 'https://joongang.dreamitbiz.com', category: 'external', features: ['Supabase', 'Auth'] },
 
-  // ── 14. 기타 (5) ──
+  // ── 14. 기타 (6) ──
   { id: 'hwp', name: 'HWP Web', nameKo: '한글 문서 변환기', description: 'HWP/HWPX 문서를 웹에서 변환·편집·관리하는 도구', url: 'https://hwp.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'jobexam', name: 'JobExam', nameKo: '직업상담사 시험 준비', description: '직업상담사 1급·2급 필기·실기 CBT 학습 플랫폼', url: 'https://jobexam.dreamitbiz.com', category: 'etc', features: ['Supabase', 'PortOne', 'Auth'] },
-  { id: 'vibe', name: 'Vibe Coding Master', nameKo: '바이브코딩 마스터', description: 'AI 코딩 커리큘럼 + 실전 프로젝트 9개 + 28일 부트캠프', url: 'https://vibe.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
+  { id: 'vibe', name: 'Vibe Coding Master', nameKo: '바이브코딩 마스터', description: 'AI 코딩 커리큘럼 + 실전 프로젝트 9개 + 28일 부트캠프', url: 'https://vibe-coding.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'full-stack', name: 'Full-Stack', nameKo: '풀스택 학습', description: '프론트엔드~백엔드~DevOps 풀스택 개발 학습', url: 'https://full-stack.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'korean', name: 'Korean Pro', nameKo: '한국어 학습', description: '베트남·인도·일본·영어권 학생을 위한 한국어 학습, TOPIK', url: 'https://korean.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
   { id: 'ppt', name: 'GenPPT', nameKo: 'AI 프레젠테이션 생성기', description: 'AI 기반 프레젠테이션 자동 생성 — OpenAI/Claude 활용 슬라이드 제작', url: 'https://ppt.dreamitbiz.com', category: 'etc', features: ['Supabase', 'Auth'] },
