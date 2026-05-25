@@ -28,18 +28,19 @@ const OUTPUT = resolve(__dirname, '..', 'public', 'og-image.png');
 
 // ── 설정 (site.ts와 맞추세요) ──────────────────────────────
 const CONFIG = {
-  siteName: 'DreamIT',         // 큰 글씨 (사이트 영문명)
-  siteNameKo: '드림아이티',     // 작은 글씨 (사이트 한국어명)
-  tagline: 'DreamIT Biz',     // 하단 태그라인
-  primaryColor: '#0046C8',     // 메인 컬러 (dark blue)
-  darkColor: '#002E8A',        // 그라데이션 끝 컬러
+  siteName: 'DreamIT Sites',           // 큰 글씨 (사이트 영문명)
+  siteNameKo: 'DreamIT 전체 사이트 포탈', // 작은 글씨 (사이트 한국어명)
+  tagline: '경영 · AI · 코딩 · 자격증 등 95개 교육 플랫폼', // 하단 태그라인
+  domain: 'site.dreamitbiz.com',       // 우측 하단 URL
+  primaryColor: '#0046C8',             // 메인 컬러 (dark blue)
+  darkColor: '#002E8A',                // 그라데이션 끝 컬러
   width: 1200,
   height: 630,
 };
 
 // ── SVG 생성 ────────────────────────────────────────────────
 function buildSVG(cfg) {
-  const { width, height, primaryColor, darkColor, siteName, siteNameKo, tagline } = cfg;
+  const { width, height, primaryColor, darkColor, siteName, siteNameKo, tagline, domain } = cfg;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs>
@@ -67,12 +68,12 @@ function buildSVG(cfg) {
   <line x1="0" y1="420" x2="${width}" y2="420" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
 
   <!-- Site name (large) -->
-  <text x="80" y="260" font-family="Arial, Helvetica, sans-serif" font-size="80" font-weight="900" fill="white" letter-spacing="-2">
+  <text x="80" y="270" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, Helvetica, sans-serif" font-size="84" font-weight="900" fill="white" letter-spacing="-2">
     ${escapeXml(siteName)}
   </text>
 
   <!-- Korean name -->
-  <text x="80" y="330" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="500" fill="rgba(255,255,255,0.85)">
+  <text x="80" y="335" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, Helvetica, sans-serif" font-size="34" font-weight="500" fill="rgba(255,255,255,0.88)">
     ${escapeXml(siteNameKo)}
   </text>
 
@@ -80,7 +81,7 @@ function buildSVG(cfg) {
   <rect x="80" y="370" width="120" height="4" rx="2" fill="url(#accent)"/>
 
   <!-- Tagline -->
-  <text x="80" y="430" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="rgba(255,255,255,0.7)">
+  <text x="80" y="435" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="rgba(255,255,255,0.78)">
     ${escapeXml(tagline)}
   </text>
 
@@ -88,8 +89,8 @@ function buildSVG(cfg) {
   <rect x="0" y="${height - 6}" width="${width}" height="6" fill="url(#accent)"/>
 
   <!-- URL -->
-  <text x="${width - 80}" y="${height - 30}" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="end">
-    dreamitbiz.com
+  <text x="${width - 80}" y="${height - 30}" font-family="monospace" font-size="16" fill="rgba(255,255,255,0.55)" text-anchor="end">
+    ${escapeXml(domain || 'dreamitbiz.com')}
   </text>
 </svg>`;
 }
