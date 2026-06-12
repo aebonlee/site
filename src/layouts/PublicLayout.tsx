@@ -6,6 +6,7 @@ import Footer from '../components/layout/Footer';
 const Home = lazy(() => import('../pages/Home'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const About = lazy(() => import('../pages/About'));
+const Showcase = lazy(() => import('../pages/Showcase'));
 
 const Loading = (): ReactElement => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
@@ -21,6 +22,7 @@ const PublicLayout = (): ReactElement => {
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/showcase" element={<Showcase />} />
             <Route path="/about" element={<About />} />
 
             <Route path="*" element={<NotFound />} />

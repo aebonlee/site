@@ -1,8 +1,10 @@
 import { useState, useMemo, type ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import site from '../config/site';
 import { sites, categories } from '../data/sites';
+import { totalShowcaseCount } from '../data/showcase';
 
 const Home = (): ReactElement => {
   const { language } = useLanguage();
@@ -65,6 +67,13 @@ const Home = (): ReactElement => {
               ? '교육, 경영, IT, 인공지능 등 다양한 분야를 아우르는 종합 교육 플랫폼'
               : 'A comprehensive education platform covering business, AI, coding, and more'}
           </p>
+
+          <Link to="/showcase" className="hero-showcase-cta">
+            🚀 {language === 'ko'
+              ? `수강생 실습 결과물 ${totalShowcaseCount}개 보기`
+              : `See ${totalShowcaseCount} student projects`}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </Link>
 
           {/* Stats — Glass Cards */}
           <div className="stats-bar">
@@ -251,7 +260,7 @@ const Home = (): ReactElement => {
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
               </div>
               <h3>TypeScript 5.8</h3>
-              <p>{language === 'ko' ? '49개 사이트 완전 마이그레이션 — tsc 0 errors' : '49 sites fully migrated — tsc 0 errors'}</p>
+              <p>{language === 'ko' ? '전 사이트 완전 마이그레이션 — tsc 0 errors' : 'All sites fully migrated — tsc 0 errors'}</p>
             </div>
             <div className="tech-card">
               <div className="tech-card-icon">
@@ -300,7 +309,7 @@ const Home = (): ReactElement => {
                 <li><strong>2026.04.06</strong> — {language === 'ko' ? 'TypeScript 마이그레이션 완료' : 'TypeScript migration complete'}</li>
                 <li><strong>2026.04.26</strong> — {language === 'ko' ? 'PortOne FK 수정 (24개 사이트)' : 'PortOne FK fix (24 sites)'}</li>
                 <li><strong>2026.04.30</strong> — {language === 'ko' ? '템플릿 v5.1 + CSS 패치 (65개)' : 'Template v5.1 + CSS patch (65 sites)'}</li>
-                <li><strong>2026.05.01</strong> — {language === 'ko' ? '87개 사이트 운영 중' : '87 sites in operation'}</li>
+                <li><strong>2026.06.12</strong> — {language === 'ko' ? `${sites.length}개 사이트 + 실습 결과물 ${totalShowcaseCount}개 정리` : `${sites.length} sites + ${totalShowcaseCount} projects organized`}</li>
               </ul>
             </div>
           </div>

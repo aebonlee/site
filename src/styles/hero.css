@@ -363,3 +363,26 @@
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; text-align: center; }
 }
+
+/* ── 홈 히어로 → 쇼케이스 진입 CTA ── */
+.hero-showcase-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-showcase-cta:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
