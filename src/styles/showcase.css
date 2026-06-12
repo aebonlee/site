@@ -1,0 +1,272 @@
+/* ============================================================
+   showcase.css — 실습 결과물 쇼케이스 페이지
+   ============================================================ */
+
+.showcase-main {
+  padding: 48px 0 80px;
+  background: var(--bg-secondary, #f7f9fc);
+}
+
+/* ── 과정 그룹 탭 ── */
+.showcase-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.showcase-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 999px;
+  background: var(--card-bg, #fff);
+  color: var(--text-secondary, #475569);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.showcase-tab:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.showcase-tab.active {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 70, 200, 0.25);
+}
+
+.showcase-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.showcase-tab.active .showcase-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── 그룹 헤더 ── */
+.showcase-group-header {
+  margin-bottom: 32px;
+  padding: 28px 32px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark, #002E8A) 100%);
+  color: #fff;
+}
+
+.showcase-group-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.showcase-group-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.showcase-group-desc {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.92;
+  max-width: 760px;
+}
+
+.showcase-group-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.showcase-badge-course:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ── 서브그룹 ── */
+.showcase-subgroup {
+  margin-bottom: 38px;
+}
+
+.showcase-subgroup-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+}
+
+.showcase-subgroup-count {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+}
+
+/* ── 카드 그리드 ── */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.showcase-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 14px;
+  background: var(--card-bg, #fff);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-blue);
+  box-shadow: 0 12px 28px rgba(0, 70, 200, 0.12);
+}
+
+.showcase-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.showcase-tech {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.showcase-tech-web {
+  background: rgba(0, 70, 200, 0.1);
+  color: var(--primary-blue);
+}
+
+.showcase-tech-streamlit {
+  background: rgba(255, 75, 75, 0.12);
+  color: #e0314b;
+}
+
+.showcase-card-repo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.showcase-card-title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-primary, #1e293b);
+}
+
+.showcase-card-note {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #64748b);
+}
+
+.showcase-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  word-break: break-all;
+}
+
+/* ── 다크 모드 ── */
+[data-theme='dark'] .showcase-main {
+  background: var(--bg-secondary, #0f172a);
+}
+
+[data-theme='dark'] .showcase-tab {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .showcase-tab-count {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .showcase-subgroup-title {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .showcase-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .showcase-card-title {
+  color: #f1f5f9;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 640px) {
+  .showcase-group-header {
+    padding: 22px 20px;
+  }
+  .showcase-group-title {
+    font-size: 1.3rem;
+  }
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}

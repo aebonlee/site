@@ -12,10 +12,11 @@ export const translations: Record<string, Record<string, unknown>> = {
       contact: '연락처',
       rnd: '연구개발',
       services: 'IT서비스',
-      blog: '블로그'
+      blog: '블로그',
+      showcase: '실습 결과물'
     },
     footer: {
-      tagline: 'DreamIT Biz 87개 교육 플랫폼을 한눈에',
+      tagline: 'DreamIT Biz 111개 교육 플랫폼을 한눈에',
       companyInfo: '회사 정보',
       contact: '연락처',
       quickLinks: '바로가기'
@@ -211,10 +212,11 @@ export const translations: Record<string, Record<string, unknown>> = {
       contact: 'Contact',
       rnd: 'R&D',
       services: 'IT Services',
-      blog: 'Blog'
+      blog: 'Blog',
+      showcase: 'Showcase'
     },
     footer: {
-      tagline: 'All 87 DreamIT Biz education platforms at a glance',
+      tagline: 'All 111 DreamIT Biz education platforms at a glance',
       companyInfo: 'Company Info',
       contact: 'Contact',
       quickLinks: 'Quick Links'
